@@ -48,13 +48,11 @@ class _CounterWidgetState extends State<CounterWidget> {
             child: Container(
               color: Colors.blue,
               child: Text(
-                '$_counter',
+                _counter == 100 ? "LIFTOFF!" : '$_counter',
                 style: TextStyle(
                   fontSize: 50.0,
                   color: _countdownColor(), //get color from helper
                 ),
-                _counter == 100 ? "LIFTOFF!" : '$_counter',
-                style: const TextStyle(fontSize: 50.0),
               ),
             ),
           ),
