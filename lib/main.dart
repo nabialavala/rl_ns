@@ -25,6 +25,16 @@ class CounterWidget extends StatefulWidget {
 class _CounterWidgetState extends State<CounterWidget> {
   int _counter = 0;
 
+  Color _countdownColor() { //helper method to return color
+    if (_counter == 0) {
+      return Colors.red;
+    } else if (_counter <= 50) {
+      return Colors.orange;
+    } else {
+      return Colors.green;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +49,10 @@ class _CounterWidgetState extends State<CounterWidget> {
               color: Colors.blue,
               child: Text(
                 '$_counter',
-                style: const TextStyle(fontSize: 50.0),
+                style: TextStyle(
+                  fontSize: 50.0,
+                  color: _countdownColor(), //get color from helper
+                ),
               ),
             ),
           ),
@@ -63,6 +76,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             },
             child: const Text("Ignite"),
           ),
+          SizedBox(height: 10.0), //space between buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
