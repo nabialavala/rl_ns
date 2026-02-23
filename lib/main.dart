@@ -56,6 +56,33 @@ class _CounterWidgetState extends State<CounterWidget> {
             activeColor: Colors.blue,
             inactiveColor: Colors.red,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                onPressed: (){
+                  setState(() {
+                    if (_counter > 0) {
+                      _counter--;
+                    } else {
+                      _counter = 0;
+                    };
+                  });
+                },
+                child: Text("Decrement"),
+              ),
+              SizedBox(width: 12),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _counter = 0;
+                  });
+                },
+                child: Text("Reset"),
+              )
+            ],
+          )
         ],
       ),
     );
