@@ -38,7 +38,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             child: Container(
               color: Colors.blue,
               child: Text(
-                '$_counter',
+                _counter == 100 ? "LIFTOFF!" : '$_counter',
                 style: const TextStyle(fontSize: 50.0),
               ),
             ),
@@ -58,7 +58,9 @@ class _CounterWidgetState extends State<CounterWidget> {
           ElevatedButton(
             onPressed: () {
               setState(() {
-                _counter++;
+                if (_counter < 100) {
+                  _counter++;
+                }
               });
             },
             child: const Text("Ignite"),
