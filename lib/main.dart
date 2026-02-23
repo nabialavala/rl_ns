@@ -23,7 +23,6 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _CounterWidgetState extends State<CounterWidget> {
-  // set counter value
   int _counter = 0;
 
   @override
@@ -55,6 +54,14 @@ class _CounterWidgetState extends State<CounterWidget> {
             },
             activeColor: Colors.blue,
             inactiveColor: Colors.red,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _counter++;
+              });
+            },
+            child: const Text("Ignite"),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
